@@ -8,7 +8,7 @@ module.exports = {
     mode: 'development',
     entry: './js/index.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, './public'),//changed
         filename: './js/bundle.js',
     },
     module: {
@@ -60,7 +60,7 @@ module.exports = {
         }),
         new RemovePlugin({
             before: {
-                include: ['./dist'],
+                include: ['./public'],//changed
             },
         }),
     ],
