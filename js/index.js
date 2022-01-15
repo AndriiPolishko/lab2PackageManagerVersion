@@ -52,6 +52,8 @@ export function sendMail(event) {
                     },5*1000)
                 }
                 catch (e) {
+                    error.innerText = "Your message wasn`t sent because of error"
+                    error.style.backgroundColor = "red"
                     console.log("Error :",error.textContent)
                 }
             },
@@ -125,6 +127,12 @@ function showError() {
     }
     error.style.backgroundColor="var(--red)"
 }
+
+function recaptcha_callback() {
+    let submit = document.querySelector(".submit")
+    submit.removeAttribute("disabled")
+}
+
 
 (function() {
     let init = process.env.INIT;
