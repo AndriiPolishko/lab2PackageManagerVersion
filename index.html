@@ -41,7 +41,12 @@
 
 </div>
 <div class="loading hide" id="spinner"></div>
-
+<script>
+    function recaptcha_callback() {
+        let submit = document.querySelector(".submit")
+        submit.removeAttribute("disabled")
+    }
+</script>
 
 </body>
 </html>

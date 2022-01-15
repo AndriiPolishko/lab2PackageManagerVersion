@@ -128,10 +128,10 @@ function showError() {
     error.style.backgroundColor="var(--red)"
 }
 
-function recaptcha_callback() {
+/*function recaptcha_callback() {
     let submit = document.querySelector(".submit")
     submit.removeAttribute("disabled")
-}
+}*/
 
 
 (function() {
