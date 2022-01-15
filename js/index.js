@@ -38,17 +38,24 @@ export function sendMail(event) {
 
     emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)
         .then(()=>{
-                spinner.classList.remove('hide');
-                name.value='';
-                email.value='';
-                message.value='';
-                setTimeout(()=> {
-                    spinner.classList.add('hide');
-                    submit.removeAttribute('disabled')
-                    error.innerText = "Great Success!!!"
-                    error.style.backgroundColor = "green"
-                },5*1000)},
-            (error)=>{console.log("Error :",error)})
+                try {
+                    spinner.classList.remove('hide');
+                    name.value='';
+                    email.value='';
+                    message.value='';
+                    console.log("message was sent");
+                    setTimeout(()=> {
+                        spinner.classList.add('hide');
+                        submit.removeAttribute('disabled')
+                        error.innerText = "Great Success!!!"
+                        error.style.backgroundColor = "green"
+                    },5*1000)
+                }
+                catch (e) {
+                    console.log("Error :",error.textContent)
+                }
+            },
+        )
 }
 
 //////////////////
