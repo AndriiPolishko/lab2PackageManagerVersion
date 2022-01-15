@@ -11,7 +11,7 @@ export let message = document.getElementById("message")
 export const submit = document.querySelector(".submit");
 
 const spinner = document.getElementById('spinner');
-console.log(process.env.INIT )
+
 function sanitize(element) {
     let unsanitizedHTML = element.innerHTML
     let tempElement = document.createElement('div');
