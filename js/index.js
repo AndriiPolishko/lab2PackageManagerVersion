@@ -12,6 +12,13 @@ export const submit = document.querySelector(".submit");
 
 const spinner = document.getElementById('spinner');
 
+document.body.addEventListener('click',()=> {
+    if(error.innerText === "Great Success!!!") {
+        error.innerText = ""
+        error.style.backgroundColor="var(--black)"
+    }
+})
+
 function sanitize(element) {
     let unsanitizedHTML = element.innerHTML
     let tempElement = document.createElement('div');
@@ -32,15 +39,14 @@ export function sendMail(event) {
     emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)
         .then(()=>{
                 spinner.classList.remove('hide');
-                error.style.backgroundColor = "green"
-                error.innerText = "Great Success!!!"
                 name.value='';
                 email.value='';
                 message.value='';
                 setTimeout(()=> {
                     spinner.classList.add('hide');
                     submit.removeAttribute('disabled')
-                    document.querySelector(".error-message").innerText=""
+                    error.innerText = "Great Success!!!"
+                    error.style.backgroundColor = "green"
                 },5*1000)},
             (error)=>{console.log("Error :",error)})
 }
