@@ -15,7 +15,7 @@ const spinner = document.getElementById('spinner');
 document.body.addEventListener('click',()=> {
     if(error.innerText === "Great Success!!!") {
         error.innerText = ""
-        error.style.backgroundColor="var(--black)"
+        error.classList="error-message_black";
     }
 })
 
@@ -48,12 +48,12 @@ export function sendMail(event) {
                         spinner.classList.add('hide');
                         submit.removeAttribute('disabled')
                         error.innerText = "Great Success!!!"
-                        error.style.backgroundColor = "green"
+                        error.classList="error-message_green";
                     },5*1000)
                 }
                 catch (e) {
                     error.innerText = "Your message wasn`t sent because of error"
-                    error.style.backgroundColor = "red"
+                    error.classList="error-message_red";
                     console.log("Error :",error.textContent)
                 }
             },
@@ -66,7 +66,7 @@ let form = document.querySelector(".contact-form")
 name.addEventListener('input',function(event) {
     if(name.validity.valid) {
         error.textContent="";
-        error.style.backgroundColor="var(--black)";
+        error.classList="error-message_black";
     }
     else {
         showError();
@@ -76,7 +76,7 @@ name.addEventListener('input',function(event) {
 email.addEventListener('input',function(event) {
     if(email.validity.valid) {
         error.textContent="";
-        error.style.backgroundColor="var(--black)";
+        error.classList="error-message_black";
     }
     else {
         showError();
@@ -86,7 +86,7 @@ email.addEventListener('input',function(event) {
 message.addEventListener('input',function(event) {
     if(message.validity.valid) {
         error.textContent="";
-        error.style.backgroundColor="var(--black)";
+        error.classList="error-message_black";
     }
     else {
         showError();
@@ -125,7 +125,7 @@ function showError() {
     else if(message.validity.tooShort) {
         error.textContent = "Your message is too short";
     }
-    error.style.backgroundColor="var(--red)"
+    error.classList="error-message_red";
 }
 
 

@@ -74,13 +74,29 @@ input, textarea {
 .hide {
     display: none;
 }
-.error-message {
+
+.error-message_black {
     width: 100%;
     margin-top: 2rem;
     border:1px solid var(--black);
-    background-color: black;
+    background-color: var(--black);
     text-align: center;
+}
 
+.error-message_red {
+    width: 100%;
+    margin-top: 2rem;
+    border:1px solid var(--black);
+    background-color: var(--red);
+    text-align: center;
+}
+
+.error-message_green {
+    width: 100%;
+    margin-top: 2rem;
+    border:1px solid var(--black);
+    background-color: var(--green);
+    text-align: center;
 }
 
 .success {
