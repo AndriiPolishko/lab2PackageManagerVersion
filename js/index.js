@@ -1,4 +1,5 @@
 import '../css/index.css';
+import sanitize from 'sanitize-html';
 
 export let error = document.querySelector("#error")
 
@@ -19,21 +20,13 @@ document.body.addEventListener('click',()=> {
     }
 })
 
-function sanitize(element) {
-    let unsanitizedHTML = element.innerHTML
-    let tempElement = document.createElement('div');
-    tempElement.innerText = unsanitizedHTML;
-    element.innerHTML = tempElement.innerHTML;
-    return element
-}
-
 export function sendMail(event) {
     submit.setAttribute('disabled','true')
     event.preventDefault();
     let tempParams = {
-        from_name: sanitize(name).value,
-        from_email: sanitize(email).value,
-        message: sanitize(message).value
+        from_name: sanitize(name.value),
+        from_email: sanitize(email.value),
+        message: sanitize(message.value)
     }
 
     emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)
