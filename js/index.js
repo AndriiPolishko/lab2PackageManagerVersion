@@ -20,7 +20,7 @@ document.body.addEventListener('click',()=> {
     }
 })
 
-export function sendMail(event) {
+function sendMail(event) {
     submit.setAttribute('disabled','true')
     event.preventDefault();
     let tempParams = {
@@ -29,7 +29,10 @@ export function sendMail(event) {
         message: sanitize(message.value)
     }
 
-    emailjs.send('service_r6f0duy','template_3qvjzop',tempParams)
+    const service = process.env.SERVICE;
+    const taplate = process.env.TAMPLATE;
+
+    emailjs.send(service,taplate,tempParams)
         .then(()=>{
                 try {
                     spinner.classList.remove('hide');
