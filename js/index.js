@@ -91,8 +91,8 @@ message.addEventListener('input',function(event) {
 
 form.addEventListener('submit', function(event) {
     if(!name.validity.valid || !email.validity.valid || !message.validity.valid) {
-        showError();
         event.preventDefault();
+        showError();
     }
     else {
         sendMail(event)
