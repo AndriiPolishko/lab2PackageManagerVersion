@@ -58,7 +58,7 @@ function sendMail(event) {
 
 //////////////////
 
-let form = document.querySelector(".contact-form")
+const form = document.querySelector(".contact-form")
 name.addEventListener('input',function(event) {
     if(name.validity.valid) {
         error.textContent="";
