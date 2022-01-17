@@ -235,3 +235,16 @@ label {
         transform: rotate(360deg);
     }
 }
+
+.recaptcha-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.g-recaptcha {
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
