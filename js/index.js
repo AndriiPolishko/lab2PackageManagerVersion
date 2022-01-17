@@ -35,6 +35,7 @@ function sendMail(event) {
     emailjs.send(service,taplate,tempParams)
         .then(()=>{
                 try {
+
                     spinner.classList.remove('hide');
                     name.value='';
                     email.value='';
@@ -52,11 +53,12 @@ function sendMail(event) {
                     error.classList="error-message_red";
                     console.log("Error :",error.textContent)
                 }
+                finally {
+                    grecaptcha.reset();
+                }
             },
         )
 }
-
-//////////////////
 
 const form = document.querySelector(".contact-form")
 name.addEventListener('input',function(event) {
