@@ -43,7 +43,6 @@ function sendMail(event) {
                     console.log("message was sent");
                     setTimeout(()=> {
                         spinner.classList.add('hide');
-                        submit.removeAttribute('disabled')
                         error.innerText = "Great Success!!!"
                         error.classList="error-message_green";
                     },5*1000)
@@ -55,6 +54,7 @@ function sendMail(event) {
                 }
                 finally {
                     grecaptcha.reset();
+                    submit.setAttribute('disabled','true')
                 }
             },
         )
